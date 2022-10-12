@@ -1,0 +1,11 @@
+django==4.1
+isort
+flake8
+python-dateutil
+django-import-export
+django-crispy-forms
+django-solo
+dateparser
+tablib
+Pillow
+django-ckeditor
