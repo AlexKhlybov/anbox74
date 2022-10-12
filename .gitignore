@@ -151,6 +151,7 @@ cython_debug/
 postgress/
 data/
 dumps/
+*env*
 
 # migrations
 /apps/companies/migrations/*.py

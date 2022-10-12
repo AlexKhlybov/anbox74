@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-5">Новости портала</h2>
+
+    {% if request.user.role == 1 %}
+        <div class="create_news  mt-3  mb-5">
+            <a class="btn btn-primary" href="{% url 'news:create_news' %}" role="button">Добавить новость</a>
+        </div>
+    {% endif %}
+    <div class="row mb-2">
+    {% for item in news_list %}
+        <div class="col-md-12">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-auto d-none d-lg-block">
+                    <img src="/media/{{ item.image }}" style="object-fit: cover" width="200" height="250" alt="{{ item.title }}">
+                </div>
+                <div class="col p-4 d-flex flex-column position-static">
+                    <div class="mb-1 text-muted">{{ item.created|date:'d.m.Y' }}</div>
+                    <h3 class="mb-2">{{ item.title }}</h3>
+                    <p class="card-text mb-auto">{{ item.text|safe|striptags|truncatewords:40 }}</p>
+                    <div class="d-flex">
+                        <div><a href="{% url 'news:detail_news' item.pk %}" class="mx-3">Подробнее</a></div>
+                        {% if request.user.role == 1 %}
+                        <div><a href="{% url 'news:update_news' item.pk %}" class="mx-3">Редактировать</a></div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
