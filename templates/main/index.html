@@ -19,7 +19,7 @@
                         </div>
                         <div class="card-body">
                             <h6 class="text-muted">{{ product.title }}</h6>
-                            <a href="#" class="card-title  fw-bold">{{ product.sub_title }}</a>
+                            <a href="{% url 'product:detail_product' product.pk %}" class="card-title  fw-bold">{{ product.sub_title }}</a>
                             <div class="d-flex mt-3 justify-content-between  border-bottom">
                                 <p class="card__text  m-0">Мах мощность, кВт</p>
                                 <p class="card__text  m-0">{{ product.power }}</p>

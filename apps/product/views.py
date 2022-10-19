@@ -6,17 +6,15 @@ from django.http import JsonResponse
 
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import DetailView, ListView
-from django.contrib.auth.mixins import LoginRequiredMixin
 
-from apps.product.models import Product
+from apps.product.models import Boiler
 
 
-class ProductListView(ListView):
-    model = Product
-    template_name = "main/index.html"
+class BoilerDetailView(DetailView):
+    model = Boiler
+    template_name = "product/product_detail.html"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "AnBox74 | Главная"
-        context["products"] = Product.objects.all()
+        context["title"] = "AnBox74 | Детали продукта"
         return context

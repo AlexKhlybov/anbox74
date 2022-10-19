@@ -104,3 +104,6 @@ class Boiler(Product):
     class Meta:
         verbose_name = "Котел"
         verbose_name_plural = "Котлы"
+    
+    def get_full_title(self):
+        return f"{self.title} {self.sub_title}, {self.power} кВт, {self.voltage} В"
