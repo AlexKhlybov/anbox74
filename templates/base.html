@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{{ title }}</title>
+    <!-- META -->
+    {% include 'main/includes/head_meta.html' %}
 
-    <link rel="icon" href="{% static '/favicon.ico' %}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 
     <!-- Bootstrap core CSS -->
-    <!-- <link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
     {% block css %} {% endblock %}
@@ -19,7 +19,12 @@
     <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
 
     {% block js %} {% endblock %}
-  
+
+    <title>
+        {% block title %}
+            {{ title|capfirst }}
+        {% endblock title %}
+    </title>
 </head>
 <body>
     <div class="container">

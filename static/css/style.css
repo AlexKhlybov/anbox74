@@ -118,6 +118,10 @@ a {
     -webkit-overflow-scrolling: touch;
 }
 
+
+/* ==================
+======= INDEX =======
+================== */
 .card__article {
     font-size: 0.7rem;
     color: lightslategrey;
@@ -143,6 +147,10 @@ a {
 .banner__header {
     max-width: 50rem;
 }
+/* 
+.card-img {
+  max-width: 200px;
+} */
 
 
 

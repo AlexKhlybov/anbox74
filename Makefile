@@ -4,11 +4,13 @@ run:
 cleandb:
 	rm -rf ./apps/main/migrations/00*
 	rm -rf ./apps/news/migrations/00*
+	rm -rf ./apps/product/migrations/00*
 
 	rm -rf ./db.sqlite3
 
 	python3 manage.py makemigrations
 	python3 manage.py migrate
+	python manage.py dbimport
 
 clnw:
 	del apps/companies/migrations/00*

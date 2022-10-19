@@ -10,233 +10,39 @@
 <div class="container">
     <main>
         <div class="row g-4">
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-3 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-3</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">3</p>
+            {% for product in boiler %}
+                <div class="col-6  col-md-4  col-xs-12">
+                    <div class="card  h-100">
+                        <p class="card__article">арт.: {{ product.article }}</p>
+                        <div class="d-flex  justify-content-center">
+                            <img src="/media/{{ product.image }}" class="card-img w-50  img" alt="...">
                         </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
+                        <div class="card-body">
+                            <h6 class="text-muted">{{ product.title }}</h6>
+                            <a href="#" class="card-title  fw-bold">{{ product.sub_title }}</a>
+                            <div class="d-flex mt-3 justify-content-between  border-bottom">
+                                <p class="card__text  m-0">Мах мощность, кВт</p>
+                                <p class="card__text  m-0">{{ product.power }}</p>
+                            </div>
+                            <div class="d-flex  mt-1  justify-content-between  border-bottom">
+                                <p class="card__text  m-0">Ступени мощности</p>
+                                <p class="card__text  m-0">{{ product.step_power }}</p>
+                            </div>
+                            <div class="d-flex  mt-1  justify-content-between  border-bottom">
+                                <p class="card__text  m-0">Напряжение, В</p>
+                                <p class="card__text  m-0">{{ product.voltage }}</p>
+                            </div>
+                            <div class="d-flex  mt-1  justify-content-between  border-bottom">
+                                <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
+                                <p class="card__text  m-0">{{ product.square }}</p>
+                            </div>
+                            <div class="mt-3  fs-4  fw-bold">{{ product.price }} р.</div>
+                            <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
                         </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">220</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">30</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">5 500 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-4.5 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-4.5</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">4.5</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">220</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">45</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">6 000 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-6 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-6</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">6</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">220</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">60</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">6 100 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-6 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-6</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">6</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">380</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">60</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">6 100 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
-        <div class="row  mt-3  g-4">
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-3 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-3</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">220</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">30</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">5 500 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-4.5 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-4.5</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">4.5</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">220</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">45</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">6 000 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-6 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-6</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">6</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">220</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">60</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">6 100 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card  h-100">
-                    <p class="card__article">арт.: ЭВМП-6 (ТЕНБ нерж.)</p>
-                    <img src="/media/general/cart_kotel.png" class="card-img-top  img" alt="...">
-                    <div class="card-body">
-                        <h6 class="text-muted">Электрический котел</h6>
-                        <a href="#" class="card-title  fw-bold">ЭВМП-6</a>
-                        <div class="d-flex mt-3 justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Мах мощность, кВт</p>
-                            <p class="card__text  m-0">6</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Ступени мощности</p>
-                            <p class="card__text  m-0">3</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Напряжение, В</p>
-                            <p class="card__text  m-0">380</p>
-                        </div>
-                        <div class="d-flex  mt-1  justify-content-between  border-bottom">
-                            <p class="card__text  m-0">Отапливаемая площадь до, м2</p>
-                            <p class="card__text  m-0">60</p>
-                        </div>
-                        <div class="mt-3  fs-4  fw-bold">6 100 р.</div>
-                        <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+</main>
 </div>
 {% endblock %}
