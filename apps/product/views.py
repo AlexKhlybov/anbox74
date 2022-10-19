@@ -1,4 +1,4 @@
-import json
+import random
 
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
@@ -17,4 +17,7 @@ class BoilerDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "AnBox74 | Детали продукта"
+        # TODO Делаем рандомную выборку похожих товаров
+        other = Boiler.objects.all().exclude(pk=self.kwargs['pk'])
+        context["other"] = random.sample(list(other), 4)
         return context
