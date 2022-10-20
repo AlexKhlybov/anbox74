@@ -161,3 +161,6 @@ apps/product/migrations/
 
 # Temp file
 tmp/
+
+# Django Statics
+staticfiles/
