@@ -1,0 +1,20 @@
+version: "3"
+   
+services:  
+
+  postgres:
+    image: postgres:13-alpine
+    env_file:
+      - .env
+    volumes:
+      - ./dumps:/code/dumps
+      - ./data/postgresql:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    restart: always
+  
+  redis:
+    container_name: anbox_redis_1
+    image: redis:alpine
+    ports:
+        - '6379:6379'

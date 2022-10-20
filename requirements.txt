@@ -2,6 +2,7 @@ django==4.1
 isort
 flake8
 python-dateutil
+python-dotenv
 django-import-export
 django-crispy-forms
 django-solo

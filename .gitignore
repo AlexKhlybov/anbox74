@@ -152,8 +152,12 @@ postgress/
 data/
 dumps/
 *env*
+!example.env
 
 # migrations
+apps/main/migrations/
+apps/news/migrations/
+apps/product/migrations/
 
 # Temp file
 tmp/
