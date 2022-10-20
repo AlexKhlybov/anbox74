@@ -6,82 +6,85 @@
     <!-- <div class="mb-1  text-muted">{{ object.created|date:'d.m.Y' }}</div> -->
     <!-- <div class="mt-4"><strong>{{ object.short_text }}</strong></div> -->
     <div class="row  flex-sm-column  flex-lg-row  d-flex">
-        <div class="col-lg-5 col-xs-12  d-flex  justify-content-center">
+        <div class="col-lg-6 col-xs-12  d-flex  justify-content-center">
             <img src="/media/{{ object.image }}" alt="" class="img  my-4" style="object-fit: cover; max-width: 100%;">
         </div>
 
-        <div class="col-lg-5  col-xs-12  px-5">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th colspan="2" scope="col">Характеристики</th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr>
-                        <td>Номинальная мощность:</td>
-                        <td class="text-end">{{ object.power }} кВт</td>
-                    </tr>
-                    <tr>
-                        <td>Номинальное напряжение сети:</td>
-                        <td class="text-end">{{ object.voltage }} В</td>
-                    </tr>
-                    <tr>
-                        <td>Мощность ступени переключения:</td>
-                        <td class="text-end">{{ object.step_power }} кВт</td>
-                    </tr>
-                    <tr>
-                        <td>Регулировка температуры теплоносителя на выходе:</td>
-                        <td class="text-end">{{ object.temp_out }}</td>
-                    </tr>
-                    <tr>
-                        <td>S отапливаемых помещений при 25 C и высоте не более 3 м:</td>
-                        <td class="text-end">{{ object.square }} м2</td>
-                    </tr>
-                    <tr>
-                        <td>Тип нагревателя:</td>
-                        <td class="text-end">{{ object.heater_type }} м2</td>
-                    </tr>
-                    <tr>
-                        <td>Максимальное давление в системе:</td>
-                        <td class="text-end">{{ object.max_pressure }} м2</td>
-                    </tr>
-                    <tr>
-                        <td>Патрубки резьба:</td>
-                        <td class="text-end">{{ object.pipe }} м2</td>
-                    </tr>
-                    <tr>
-                        <td>Теплоноситель:</td>
-                        <td class="text-end">{{ object.coolant }} м2</td>
-                    </tr>
-                    <tr>
-                        <td>Масса не более:</td>
-                        <td class="text-end">{{ object.mass }} кг</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Габаритные размеры не более, мм:</td>
-                    </tr>
-                    <tr>
-                        <td> - без патрубков:</td>
-                        <td class="text-end">{{ object.without_measure }}</td>
-                    </tr>
-                    <tr>
-                        <td> - с патрубками:</td>
-                        <td class="text-end">{{ object.with_measure }}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="d-flex  col-lg-6  col-xs-12  flex-column-reverse  align-items-center  align-items-md-start">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2" scope="col">Характеристики</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>Номинальная мощность:</td>
+                            <td class="text-end">{{ object.power }} кВт</td>
+                        </tr>
+                        <tr>
+                            <td>Номинальное напряжение сети:</td>
+                            <td class="text-end">{{ object.voltage }} В</td>
+                        </tr>
+                        <tr>
+                            <td>Мощность ступени переключения:</td>
+                            <td class="text-end">{{ object.step_power }} кВт</td>
+                        </tr>
+                        <tr>
+                            <td>Регулировка температуры теплоносителя на выходе:</td>
+                            <td class="text-end">{{ object.temp_out }}</td>
+                        </tr>
+                        <tr>
+                            <td>S отапливаемых помещений при 25 C и высоте не более 3 м:</td>
+                            <td class="text-end">{{ object.square }} м2</td>
+                        </tr>
+                        <tr>
+                            <td>Тип нагревателя:</td>
+                            <td class="text-end">{{ object.heater_type }} м2</td>
+                        </tr>
+                        <tr>
+                            <td>Максимальное давление в системе:</td>
+                            <td class="text-end">{{ object.max_pressure }} м2</td>
+                        </tr>
+                        <tr>
+                            <td>Патрубки резьба:</td>
+                            <td class="text-end">{{ object.pipe }} м2</td>
+                        </tr>
+                        <tr>
+                            <td>Теплоноситель:</td>
+                            <td class="text-end">{{ object.coolant }} м2</td>
+                        </tr>
+                        <tr>
+                            <td>Масса не более:</td>
+                            <td class="text-end">{{ object.mass }} кг</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Габаритные размеры не более, мм:</td>
+                        </tr>
+                        <tr>
+                            <td> - без патрубков:</td>
+                            <td class="text-end">{{ object.without_measure }}</td>
+                        </tr>
+                        <tr>
+                            <td> - с патрубками:</td>
+                            <td class="text-end">{{ object.with_measure }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <div class="col  d-flex  mb-5">
+                <div class="card  mt-3" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title fs-2  fw-bolder">{{ object.price|floatformat }} р.</h5>
+                      <p class="fs-6  card-text">Отгрузка в течении 2-х рабочих дней.</p>
+                      <a href="#" class="btn  btn-warning">Купить</a>
+                    </div>
+                  </div>
+            </div>
         </div>
-
-        <div class="col-lg-2  d-flex  flex-sm-row  flex-lg-column  align-item-center justify-content-center">
-            <div class="card  mt-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title fs-2  fw-bolder">{{ object.price|floatformat }} р.</h5>
-                  <p class="fs-6  card-text">Отгрузка в течении 2-х рабочих дней.</p>
-                  <a href="#" class="btn  btn-warning">Купить</a>
-                </div>
-              </div>
-        </div>
+        
         
     </div>
     <div class="mb-5  col-xs-12  pb-5">
