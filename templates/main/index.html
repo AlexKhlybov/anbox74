@@ -37,7 +37,11 @@
                                 <p class="card__text  m-0">{{ product.square }}</p>
                             </div>
                             <div class="mt-3  fs-4  fw-bold">{{ product.price }} р.</div>
-                            <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a>
+
+                            <div class=" gap-2">
+                                <button class="btn  btn-warning  fw-bolder mt-4" style="outline: none;" id="createMessage" type="button" aria-current="true" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Купить</button>
+                            </div>
+                            <!-- <a href="#" class="btn  btn-warning  fw-bolder mt-4" role="button">Купить</a> -->
                         </div>
                     </div>
                 </div>
@@ -45,4 +49,5 @@
         </div>
 </main>
 </div>
+{% include 'main/includes/modal.html' %}
 {% endblock %}

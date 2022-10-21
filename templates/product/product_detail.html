@@ -79,7 +79,9 @@
                     <div class="card-body">
                       <h5 class="card-title fs-2  fw-bolder">{{ object.price|floatformat }} р.</h5>
                       <p class="fs-6  card-text">Отгрузка в течении 2-х рабочих дней.</p>
-                      <a href="#" class="btn  btn-warning">Купить</a>
+                      <div class=" gap-2">
+                        <button class="btn  btn-warning  fw-bolder mt-4" style="outline: none;" id="createMessage" type="button" aria-current="true" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Купить</button>
+                    </div>
                     </div>
                   </div>
             </div>
@@ -116,4 +118,5 @@
             {% endfor %}
     </div>
 </div>
+{% include 'main/includes/modal.html' %}
 {% endblock %}

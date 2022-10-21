@@ -1,0 +1,189 @@
+
+async function getModalMessage(args) {
+    const event = args.event
+    const action = args.action
+    event.preventDefault();
+    event.stopPropagation();
+
+    const alert = {
+        succesfull: {
+            title: "Отправлено!",
+            text: "Ваше сообщение успешно отправлено!",
+            type: "alert-success"
+        },
+        errLoad: {
+            title: "Ошибка!",
+            text: "Ошибка загрузки сообщения. Попробуйте чуть позже!",
+            type: "alert-danger"
+        },
+        errSend: {
+            title: "Ошибка!",
+            text: "Ошибка отправки. Попробуйте чуть позже!",
+            type: "alert-danger"
+        }
+    }
+    const resumeData = {}
+    const modal = document.querySelector('.modal-dialog');
+
+    if (action !== 'send') {
+        modal.textContent = '';
+    }
+
+    // Блок выбора ACTION'a
+    switch (action) {
+        case 'answer':
+            modal.insertAdjacentHTML('beforeend', renderAnswerMsgForm(sender));
+            break;
+        case 'new':
+            modal.insertAdjacentHTML('beforeend', renderNewMsgForm());
+            break;
+        case 'detail':
+            request.body = `id=${msgID}`;
+            request.url = url.detail;
+            requestServer();
+            break;
+        case 'send':
+            const form = document.getElementById(formID);
+            form.classList.add('was-validated');
+
+            if (form.checkValidity()) {
+                resumeData.email = document.querySelector('#sendMessage').value
+                resumeData.subject = document.querySelector('#messageInput').value
+                resumeData.text = document.querySelector('#messageTextarea').value
+                request.url = url.resume;  //TODO Временно поставил resume вместо create
+    
+                parceData(resumeData);
+                requestServer();
+            }
+            break;
+        case 'resume':
+            break;
+    }
+
+    // Отрисовываем Сообщение
+    function renderMsg(data) {
+        return `<div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropTitle">${data.title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+            <div class="d-flex justify-content-between mb-3">
+                <div class="d-flex align-items-center">
+                    <p style="margin: 0px;" >от: </p>
+                    <small class="text-muted ms-3" id="staticBackdropSender" value="${data.sender}">${data.sender}</small>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <p style="margin: 0px;">дата: </p>
+                    <small class="text-muted ms-3" id="staticBackdropDate">${data.send_at}</small>
+                </div>
+            </div>
+            <p id="staticBackdropBody">${data.text}</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btnAnswerGetForm">Ответить</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+        </div>
+    </div>`
+    }
+
+     // Отрисовывает Форму "Ответное сообщение"
+     function renderAnswerMsgForm(sender) {
+        return `<div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropTitle">Новое сообщение</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+            <form method="POST" name="AnswerForm" id="formAnswerMessage">
+                <div class="mb-3 row">
+                    <label for="SendInput" class="col-sm-2 col-form-label">Кому:</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="sendMessage" value="${sender}">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="messageInput" class="form-label">Тема</label>
+                    <input type="text" class="form-control" id="messageInput" required>
+                    <div class="invalid-feedback">Введите тему сообщения!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="messageTextarea" class="form-label">Сообщение</label>
+                    <textarea class="form-control" id="messageTextarea" rows="3" required></textarea>
+                    <div class="invalid-feedback">Введите текст сообщения!</div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnAnswerSend">Отправить</button>
+            </form>
+        </div>
+    </div>`
+    };
+
+    // Отрисовывает Форму "Новое сообщение"
+    function renderNewMsgForm() {
+        return `<div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropTitle">Новое сообщение</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4">
+            <form method="POST" name="NewMsgForm" id="formNewMessage">
+                <div class="mb-3">
+                    <label for="SendInput" class="form-label">Кому:</label>
+                    <input type="email" class="form-control" id="sendMessage" placeholder="E-mail пользователя" required>
+                    <div class="invalid-feedback">Введите корректный e-mail (пользователя)</div>
+                </div>
+                <div class="mb-3">
+                    <label for="messageInput" class="form-label">Тема</label>
+                    <input type="text" class="form-control" id="messageInput" required>
+                    <div class="invalid-feedback">Введите тему сообщения!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="messageTextarea" class="form-label">Сообщение</label>
+                    <textarea class="form-control" id="messageTextarea" rows="3" required></textarea>
+                    <div class="invalid-feedback">Введите текст сообщения!</div>
+                </div>
+                <button type="submit" class="btn btn-primary" id="btnMessageSend">Отправить</button>
+            </form>
+        </div>
+    </div>`
+    }
+
+    // Отрисовывает DONE сообщение
+    function renderDoneMsg(alert) {
+        return `<div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropTitle">${alert.title}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <div class="alert ${alert.type}" role="alert">${alert.text}</div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+        </div>
+    </div>`
+    }
+
+    modal.textContent = '';
+    modal.insertAdjacentHTML('beforeend', renderDoneMsg(alert.errSend));
+    }
+
+}
+
+//Ловим событие клика на сообщение для подробного просмотра
+document.querySelectorAll("#btnMessageDetail").forEach(el => {
+    el.addEventListener('click', event => {
+        const messageID = event.currentTarget.dataset.messageid;
+        getModalMessage({event: event, action: 'detail', msgID: messageID}).then();
+    })
+});
+
+//Ловим событие кнопок "Ответить", "Отправить", "Новое сообщение"
+document.addEventListener('click', event => {
+    if (event.target.id == 'createMessage') {
+        getModalMessage({event: event, action: 'create'}).then();
+    };
+})
