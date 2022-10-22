@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tel_to %}
+
+{% block content %}
+<div class="container  border-top  d-flex  justify-content-center  px-5  py-5">
+    <div class="card  text-bg-light  mt-5  mb-3" style="min-width: 24rem;">
+        <div class="card-header  fs-2  fw-bolder  text-center">{{ site_config.city|upper }}</div>
+        <div class="card-body">
+            <div class="contact__item  d-flex  flex-column  align-items-center">
+                <h4 class="contact__title  my-2">Телефон</h4>
+                <p class="contact__data  fw-semibold">{{ site_config.phone|tel_to }}</p>
+            </div>
+            <div class="contact__item  mb-3  d-flex  flex-column  align-items-center">
+                <h4 class="contact__title  my-2">E-mail</h4>
+                <a class="contact__data  fw-semibold" href="mailto:{{ site_config.email }}" >{{ site_config.email }}</a>
+            </div>
+            <div class="contact__item  d-flex  flex-column  align-items-center">
+                <h4 class="contact__title  my-2">Адрес</h4>
+                <p class="contact__data  fw-semibold">ул.{{ site_config.street }}, д.{{ site_config.num_building }}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

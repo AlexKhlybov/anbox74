@@ -88,7 +88,7 @@ async function getModalMessage(args) {
     </div>`
     }
 
-     // Отрисовывает Форму "Ответное сообщение"
+    // Отрисовывает Форму "Ответное сообщение"
      function renderAnswerMsgForm(sender) {
         return `<div class="modal-content">
         <div class="modal-header">
