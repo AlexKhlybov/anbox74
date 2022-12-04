@@ -164,3 +164,4 @@ tmp/
 
 # Django Statics
 staticfiles/
+*env*
