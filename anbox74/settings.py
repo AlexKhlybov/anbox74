@@ -16,7 +16,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv("DEBUG", default=None)
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
@@ -73,7 +73,7 @@ TEMPLATES = [
             ],
             'libraries':{
                 'tel_to': 'apps.main.templatetags.tel_to',
-
+                'mail_to': 'apps.main.templatetags.mail_to',
             }
         },
     },
@@ -133,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-if not DEBUG:
+if DEBUG:
     STATICFILES_DIRS = [BASE_DIR.joinpath('static'),]
 else:
     STATIC_ROOT = BASE_DIR.joinpath('staticfiles')

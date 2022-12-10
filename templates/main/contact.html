@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load tel_to %}
+{% load mail_to %}
 
 {% block content %}
 <div class="container  border-top  d-flex  justify-content-center  px-5  py-5">
@@ -13,7 +14,7 @@
             </div>
             <div class="contact__item  mb-3  d-flex  flex-column  align-items-center">
                 <h4 class="contact__title  my-2">E-mail</h4>
-                <a class="contact__data  fw-semibold" href="mailto:{{ site_config.email }}" >{{ site_config.email }}</a>
+                <p class="contact__data  fw-semibold">{{ site_config.email|mail_to }}</p>
             </div>
             <div class="contact__item  d-flex  flex-column  align-items-center">
                 <h4 class="contact__title  my-2">Адрес</h4>

@@ -1,0 +1,44 @@
+[
+    {
+        "id": 6,
+        "created": "2022-12-04 20:36:43",
+        "title": "CDEK",
+        "image": "delivery/98af974e-38e4-422e-ac88-f98ad03baf0e.png",
+        "url": "https://www.cdek.ru/ru"
+    },
+    {
+        "id": 5,
+        "created": "2022-12-04 20:36:29",
+        "title": "CDEK",
+        "image": "delivery/b8190204-b045-444c-89b7-034df9a6106a.png",
+        "url": "https://www.cdek.ru/ru"
+    },
+    {
+        "id": 4,
+        "created": "2022-12-04 20:01:36",
+        "title": "CDEK",
+        "image": "delivery/40df4223-9294-46c0-861a-d91d35bc105f.png",
+        "url": "https://www.cdek.ru/ru"
+    },
+    {
+        "id": 3,
+        "created": "2022-12-04 20:36:43",
+        "title": "CDEK",
+        "image": "delivery/98af974e-38e4-422e-ac88-f98ad03baf0e.png",
+        "url": "https://www.cdek.ru/ru"
+    },
+    {
+        "id": 2,
+        "created": "2022-12-04 20:36:29",
+        "title": "CDEK",
+        "image": "delivery/b8190204-b045-444c-89b7-034df9a6106a.png",
+        "url": "https://www.cdek.ru/ru"
+    },
+    {
+        "id": 1,
+        "created": "2022-12-04 20:01:36",
+        "title": "CDEK",
+        "image": "delivery/40df4223-9294-46c0-861a-d91d35bc105f.png",
+        "url": "https://www.cdek.ru/ru"
+    }
+]

@@ -3,16 +3,19 @@
       <div class="footer__memu  d-flex">
           <ul class="d-flex  flex-column  align-items-start">
               <li><a class="link-secondary  link__footer-menu" href="/">Главная</a></li>
-              <li><a class="link-secondary  link__footer-menu" href="#">Наши партнеры</a></li>
-              <li><a class="link-secondary  link__footer-menu" href="#">Новости</a></li>
-              <li><a class="link-secondary  link__footer-menu" href="#">Правила портала</a></li>
-              <li><a class="link-secondary  link__footer-menu" href="#">Правила размещения вакансий</a></li>
+              <li><a class="link-secondary  link__footer-menu" href="{% url 'main:contact' %}">Контакты</a></li>
+              
+              {% comment %}
+                <li><a class="link-secondary  link__footer-menu" href="#">Новости</a></li>
+                <li><a class="link-secondary  link__footer-menu" href="#">Правила портала</a></li>
+                <li><a class="link-secondary  link__footer-menu" href="#">Правила размещения вакансий</a></li>
+              {% endcomment %}
           </ul>
       </div>
       <p class="text-end"><a href="#">Back to top</a></p>
 
       <hr class="footer__line">
-          <p class="text-start">ИП "АНБОКС 74" использует файлы «cookie», с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.</p>
+          <p class="text-start">Сайт использует файлы «cookie», с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.</p>
       <hr class="footer__line">
 
       <div class="d-flex  justify-content-between  align-items-center  flex-column-reverse  flex-md-row">

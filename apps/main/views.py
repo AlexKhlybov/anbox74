@@ -1,11 +1,8 @@
-from django.shortcuts import render
 from django.views.generic import ListView
 
-# from apps.companies.models import Company
 from apps.news.models import News
+from apps.main.models import Delivery
 from apps.product.models import Boiler
-# from apps.resume.models import Resume, ResumeFavorites
-# from apps.vacancies.models import Vacancy, VacancyFavorites
 
 
 class HomePageList(ListView):
@@ -25,4 +22,14 @@ class ContactPageList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "Anbox74 | Контакты"
+        return context
+
+class DeliveryPageList(ListView):
+    model = Delivery
+    template_name = "main/delivery.html"
+    context_object_name = 'delivers'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Anbox74 | Доставка"
         return context

@@ -66,7 +66,6 @@ a {
   text-decoration: none;
 }
 
-
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -130,8 +129,6 @@ a {
 
 .card__text {
   font-size: 0.8rem;
-  /* color: lightslategrey; */
-  /* padding: 5px 10px; */
 }
 
 .top__banner {
@@ -147,11 +144,6 @@ a {
 .banner__header {
     max-width: 50rem;
 }
-/* 
-.card-img {
-  max-width: 200px;
-} */
-
 
 
 /* ==================
@@ -263,4 +255,17 @@ a {
 .field_form {
   /* background-color: #f1f1f1; */
   width: 100%;
+}
+
+
+
+/* ==================
+=== Delivery Page ===
+====================*/
+
+.delivery__card {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  min-width: 200px;
 }

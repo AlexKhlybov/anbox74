@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "logo": "logo.png",
+        "name": "AnBox",
+        "tagline": "Тепло с доставкой в каждый дом",
+        "city": "Миасс",
+        "street": "Готвальда",
+        "num_building": "35",
+        "phone": "79511113796",
+        "email": "info@anbox74.ru",
+        "site": "www.anbox74.ru",
+        "key_ya": "",
+        "lat": "",
+        "lon": "",
+        "footer_copyright": "Все права защищены © Миасс 2021 - 2022 гг.",
+        "vk": "https://vk.com/",
+        "im": "https://instagram.com/",
+        "fb": "https://facebook.com/",
+        "tw": "https://twitter.com/"
+    }
+]

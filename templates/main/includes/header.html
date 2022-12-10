@@ -1,3 +1,6 @@
+{% load tel_to %}
+{% load mail_to %}
+
 <header>
     <div class="d-flex  flex-row  justify-content-between  flex-md-row align-items-center py-3 border-bottom">
         <div class="d-flex">
@@ -14,8 +17,8 @@
             </a>
         </div>
         <div class="d-flex  flex-column  justify-content-end">
-            <p class="text-end  fw-bolder  p-0  m-0">+7(985)234-76-67</p>
-            <p class="text-end  fw-bolder  p-0  m-0">info@anbox74.ru</p>
+            <p class="text-end  fw-bolder  p-0  m-0">{{ site_config.phone|tel_to }}</p>
+            <p class="text-end  fw-bolder  p-0  m-0">{{ site_config.email|mail_to }}</p>
         </div>
     </div>
 
@@ -36,7 +39,7 @@
                             <a class="nav-link  mx-3  {% if request.resolver_match.url_name == 'contact' %}active  fw-bold{% endif %}" aria-current="page" href="{% url 'main:contact' %}">Контакты</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  mx-3" aria-current="page" href="/">Доставка</a>
+                            <a class="nav-link  mx-3  {% if request.resolver_match.url_name == 'delivery' %}active  fw-bold{% endif %}" aria-current="page" href="{% url 'main:delivery' %}">Доставка</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link  mx-3" aria-current="page" href="/">Оплата</a>
