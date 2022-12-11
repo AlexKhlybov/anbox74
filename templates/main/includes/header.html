@@ -42,10 +42,7 @@
                             <a class="nav-link  mx-3  {% if request.resolver_match.url_name == 'delivery' %}active  fw-bold{% endif %}" aria-current="page" href="{% url 'main:delivery' %}">Доставка</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  mx-3" aria-current="page" href="/">Оплата</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  mx-3" aria-current="page" href="/">О нас</a>
+                            <a class="nav-link  mx-3  {% if request.resolver_match.url_name == 'payments' %}active  fw-bold{% endif %}" aria-current="page" href="{% url 'main:payments' %}">Оплата</a>
                         </li>
                     </ul>
                 </div>

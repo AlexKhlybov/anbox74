@@ -1,44 +1,44 @@
 [
     {
         "id": 6,
-        "created": "2022-12-04 20:36:43",
-        "title": "CDEK",
-        "image": "delivery/98af974e-38e4-422e-ac88-f98ad03baf0e.png",
-        "url": "https://www.cdek.ru/ru"
+        "created": "2022-12-11 19:07:12",
+        "title": "Байкал сервис",
+        "image": "delivery/36db97d2-ad94-4d0a-b4c3-088122a211b2.png",
+        "url": "https://www.baikalsr.ru/"
     },
     {
         "id": 5,
-        "created": "2022-12-04 20:36:29",
-        "title": "CDEK",
-        "image": "delivery/b8190204-b045-444c-89b7-034df9a6106a.png",
-        "url": "https://www.cdek.ru/ru"
+        "created": "2022-12-11 19:07:12",
+        "title": "Dpd",
+        "image": "delivery/700ffb6a-f10a-4206-8a01-0b31cf35753d.png",
+        "url": "https://www.dpd.ru/dpd/home.do2"
     },
     {
         "id": 4,
-        "created": "2022-12-04 20:01:36",
-        "title": "CDEK",
-        "image": "delivery/40df4223-9294-46c0-861a-d91d35bc105f.png",
-        "url": "https://www.cdek.ru/ru"
+        "created": "2022-12-11 19:07:12",
+        "title": "Kit",
+        "image": "delivery/9b820dab-f97c-4005-847f-7f42fd774743.png",
+        "url": "https://tk-kit.ru/"
     },
     {
         "id": 3,
-        "created": "2022-12-04 20:36:43",
-        "title": "CDEK",
-        "image": "delivery/98af974e-38e4-422e-ac88-f98ad03baf0e.png",
-        "url": "https://www.cdek.ru/ru"
+        "created": "2022-12-11 19:07:12",
+        "title": "ЖелДорЭкспедиция",
+        "image": "delivery/00711a2a-62a2-4572-a15f-5ce1031f7e4c.png",
+        "url": "https://www.jde.ru/"
     },
     {
         "id": 2,
-        "created": "2022-12-04 20:36:29",
-        "title": "CDEK",
-        "image": "delivery/b8190204-b045-444c-89b7-034df9a6106a.png",
-        "url": "https://www.cdek.ru/ru"
+        "created": "2022-12-11 19:07:11",
+        "title": "Деловые линии",
+        "image": "delivery/f03147c9-2926-48c0-97a4-660451f162eb.jpeg",
+        "url": "https://www.dellin.ru/"
     },
     {
         "id": 1,
-        "created": "2022-12-04 20:01:36",
+        "created": "2022-12-11 19:07:11",
         "title": "CDEK",
-        "image": "delivery/40df4223-9294-46c0-861a-d91d35bc105f.png",
+        "image": "delivery/1562a59e-7421-4430-a24a-4b9f6e270b7e.png",
         "url": "https://www.cdek.ru/ru"
     }
 ]

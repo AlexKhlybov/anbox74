@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container  border-top  d-flex flex-column justify-content-center  px-5  py-5">
+    <h1 class="mb-5">Оплата</h1>
+    {% for pay in payments %}
+    <div class="mt-4  mb-5">
+        <div class="row row-cols-1 row-cols-lg-1 g-4">
+            <div class="mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4  d-flex  justify-content-center">
+                        <img src="/media/{{ pay.image }}" style="object-fit: scale-down" width="200" height="150" alt="{{ pay.title }}">
+                    </div>
+                    <div class="col-md-8">
+                        <h3 class="pb-3 pt-2">{{ pay.pk }}. {{ pay.title }}</h3>
+                        <div class="card-body">
+                            <p class="card-text">{{ pay.text }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

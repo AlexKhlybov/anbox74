@@ -3,11 +3,24 @@
 
 {% block content %}
 <div class="container  border-top  d-flex flex-column justify-content-center  px-5  py-5">
-    <h2 class="mb-5">Наши партнеры</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-    {% for deliver in delivers %}
-        {% include 'main/includes/delivery_list_item.html' %}
-    {% endfor %}
-    </div>
+    <h1 class="mb-5">Доставка</h1>
+    <ul>
+        <li class="mt-4  mb-5">
+            <h3 class="pb-3">1. Доставка транспортной компанией</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for deliver in delivers %}
+                    {% include 'main/includes/delivery_list_item.html' %}
+                {% endfor %}
+            </div>
+        </li>
+        <li class="mb-5">
+            <h3 class="pb-3">2. Доставка по г.Миасс</h3>
+            <p>Доставка по г.Миасс осуществляется бесплатно.</p>
+        </li>
+        <li class="mb-5">
+            <h3 class="pb-3">3. Самовывоз</h3>
+            <p>Забрать товар самостоятельно можно по адресу г.Миасс, ул.Готвальда, д.35, с 10:00 до 18:00.</p>
+        </li>
+    </ul>
 </div>
 {% endblock %}

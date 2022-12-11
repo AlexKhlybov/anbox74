@@ -34,6 +34,22 @@ class SiteConfiguration(SingletonModel):
     email = models.EmailField(verbose_name="e-mail", help_text="info@uk.ru", default="info@anbox74.ru")
     site = models.CharField(verbose_name="Сайт", max_length=128, help_text="www.anbox74.ru", default="www.anbox74.ru")
 
+    # Реквизиты
+    # Компания: Индивидуальный предприниматель Урванцев Алексей Александрович
+    # ИНН: 741503525000
+    # Счёт(₽): 40802810601500245317
+    # Банк: ТОЧКА ПАО БАНКА "ФК ОТКРЫТИЕ"
+    # БИК: 044525999
+    # Город: г.Москва
+    # Корр.счёт: 30101810845250000999
+    req_company = models.CharField(verbose_name="Реквизиты - Компания", null=True, blank=True, max_length=128, help_text="ИП Иванов")
+    req_inn = models.CharField(verbose_name="Реквизиты - ИНН", max_length=12, null=True, blank=True, help_text="ИНН в формате - 777777777777")
+    req_account = models.CharField(verbose_name="Реквизиты - Счет", max_length=20, null=True, blank=True, help_text="№ счета (20) в формате - 77777777777777777777")
+    req_bank = models.CharField(verbose_name="Реквизиты - Банк", max_length=128, null=True, blank=True, help_text="МТС Банк")
+    req_bik = models.CharField(verbose_name="Реквизиты - БИК", max_length=9, null=True, blank=True, help_text="БИК - 111111111")
+    req_city = models.CharField(verbose_name="Реквизиты - Город", max_length=128, null=True, blank=True, help_text="г. Москва")
+    req_kor_acc = models.CharField(verbose_name="Реквизиты - Кор.счёт", max_length=20, null=True, blank=True, help_text="№ кор.счета (20) в формате - 77777777777777777777")
+
     key_ya = models.CharField(
         verbose_name="Api-ключ Яндекса", max_length=128, blank=True, help_text="1888f9f3-1174-48c4-b1b4-fa129bй2345234"
     )
@@ -76,6 +92,20 @@ class Delivery(models.Model):
         ordering = ('-created',)
         verbose_name = 'Компания доставки'
         verbose_name_plural = 'Компании доставки'
+
+    def __str__(self):
+        return self.title
+
+class Payments(models.Model):
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
+    title = models.CharField(max_length=128, verbose_name='Заголовок')
+    image = models.FileField(max_length=64, verbose_name='Картинка', upload_to=upload_to_delivery)
+    text = models.TextField(max_length=2000, blank=True, verbose_name='Описание')
+
+    class Meta:
+        ordering = ('created',)
+        verbose_name = 'Оплата'
+        verbose_name_plural = 'Варианты оплаты'
 
     def __str__(self):
         return self.title

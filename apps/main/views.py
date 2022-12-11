@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 
 from apps.news.models import News
-from apps.main.models import Delivery
+from apps.main.models import Delivery, Payments
 from apps.product.models import Boiler
 
 
@@ -32,4 +32,14 @@ class DeliveryPageList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "Anbox74 | Доставка"
+        return context
+
+class PaymentsPageList(ListView):
+    model = Payments
+    template_name = "main/payments.html"
+    context_object_name = 'payments'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Anbox74 | Оплата"
         return context
