@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.management import BaseCommand
 
 from apps.product.admin import CityResource, ProductCategoryResource, BoilerResource, ManufacturerResource
-from apps.main.admin import ConfigResource, DeliveryResource
+from apps.main.admin import ConfigResource, DeliveryResource, PaymentsResource
 # from apps.news.admin import NewsResource
 
 
@@ -15,7 +15,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         resource = [CityResource, ProductCategoryResource, BoilerResource, ManufacturerResource]
-        resource += [ConfigResource, DeliveryResource]
+        resource += [ConfigResource, DeliveryResource, PaymentsResource]
 
         for i in resource:
             self.export_model(i, options)

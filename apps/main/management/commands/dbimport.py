@@ -7,7 +7,7 @@ from django.core.management import BaseCommand
 from import_export import resources
 
 from apps.product.models import City, Boiler, ProductCategory, Manufacturer
-from apps.main.models import SiteConfiguration, Delivery
+from apps.main.models import SiteConfiguration, Delivery, Payments
 
 
 class Command(BaseCommand):
@@ -16,7 +16,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         models = [City, Manufacturer, ProductCategory, Boiler]
-        models += [SiteConfiguration, Delivery]
+        models += [SiteConfiguration, Delivery, Payments]
 
         for i in models:
             self.import_model(i, options)
