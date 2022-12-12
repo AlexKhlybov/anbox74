@@ -12,7 +12,7 @@ class HomePageList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "Anbox74 | Главная"
-        context["boiler"] = Boiler.objects.all()[:6]
+        context["boiler"] = Boiler.objects.filter(is_active=True)
         return context
 
 class ContactPageList(ListView):
