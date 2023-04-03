@@ -28,21 +28,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     
     'crispy_forms',
-    # 'ckeditor',
-    # 'ckeditor_uploader',
     'solo',
 
     'apps.main',
-    # 'apps.users',
     'apps.news',
     'apps.product',
-    # 'apps.vacancies',
-    # 'apps.resume',
-    # 'apps.notify',
-    # 'apps.moderation',
-    # 'apps.answers',
+
 ]
 
 MIDDLEWARE = [
@@ -146,3 +140,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('media')
+
+SITE_ID = 1

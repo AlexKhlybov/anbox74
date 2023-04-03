@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+	<url>
+		<loc>{{ request.scheme }}://{{ request.get_host }}</loc>
+		<lastmod>weekly</lastmod>
+		<priority>1.0</priority>
+	</url>
+
+	<url>
+		<loc>{{ request.scheme }}://{{ request.get_host }}{% url 'main:delivery' %}</loc>
+		<lastmod>weekly</lastmod>
+		<priority>0.8</priority>
+	</url>
+
+	<url>
+		<loc>{{ request.scheme }}://{{ request.get_host }}{% url 'main:payments' %}</loc>
+		<lastmod>weekly</lastmod>
+		<priority>0.8</priority>
+	</url>
+	
+	{% for object in boiler %}
+		<url>
+			<loc>{{ request.scheme }}://{{ request.get_host }}{% url 'product:detail_product' object.pk %}</loc>
+			<lastmod>{{ object.updated|date:"Y-m-d" }}</lastmod>
+			<priority>1.0</priority>
+		</url>		
+	{% endfor %}
+
+</urlset> 
